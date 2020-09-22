@@ -6,7 +6,38 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <script>
-    document.write("Hoi Maailma");
+    
+    function ekaTehtava() {
+      var yksi = document.getElementsByTagName('em');
+      document.write("<strong>EKAN TEHTÄVÄN TULOSTUS: </strong>" + yksi[0].innerHTML);
+    }
+
+    function viiskytKertaa() {
+      for(var i = 0; i <= 50; i++) {
+      document.write('<h2>Hyvää iltapäivää !</h2>');
+      }
+    }
+
+    function selainCheck() {
+      if(navigator.appCodeName == 'Mozilla'){
+    location.href = "http://www.mozilla.org"
+    } else {
+    location.href = "http://www.google.com"
+      }
+    }
+
+    function opiskelijaCheck() {
+      var txt;
+      var r = confirm ("Tervetuloa!\nJos olet opiskelija, paina OK !");
+      
+      if (r == true) {
+      txt = "Tervetuloa opiskelija !";
+      } else { 
+      txt = "Sivu on vain opiskelijoille, sorry...";
+    }
+      document.write(txt);
+    } 
+
   </script>
   <body>
     <h1>Workshop 2: JavaScript BOM -- testi</h1>
@@ -24,21 +55,24 @@
       the following text on the browser page. Use HTML-tags to produce the text
       styles to the page. <br />
       <br />
-      <em
-        ><strong
-          >"If I had nine hours to chop down a tree, I'd spend the first six
-          sharpening my ax."</strong
-        >
+      <em>
+        <strong>
+          "If I had nine hours to chop down a tree, I'd spend the first six
+          sharpening my ax."</strong>
+        
         <br />
-        -- Abraham Lincoln</em
-      >
+        -- Abraham Lincoln</em>  
     </p>
+
+    <button onclick="ekaTehtava()">Eka Tehtävä:</button>
 
     <h2>Exercise 2</h2>
     <p>
       Create a JavaScript function called repeatingText. It writes out a line of
       text to the page 50 times.
     </p>
+
+    <button onclick="viiskytKertaa()">Toka Tehtävä:</button>
 
     <h2>Exercise 3</h2>
     <p>
@@ -48,6 +82,8 @@
       pages to test the code.
     </p>
 
+    <button onclick="selainCheck()">Kolmas Tehtävä</button>
+
     <h2>Exercise 4</h2>
     <p>
       Create a simple web page, where JavaScript confirm-dialog will pop out
@@ -55,6 +91,8 @@
       "Welcome student" to the page. If the user clicks cancel, write on the
       page: "Sorry, this page is for students only".
     </p>
+
+    <button onclick="opiskelijaCheck()">Neljäs tehtävä</button>
 
     <h2>Exercise 5</h2>
     Use document.write to output an image tag with a real image to the page.
@@ -71,10 +109,8 @@
 				"http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg", 
 				"http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"
 			];
-		</pre
-    >
-    <script>
-      <!-- JavaScript goes here -->
-    </script>
+    </pre>
+    
+    <button onclick="kuvaSivulle()">Viides tehtävä</button>
   </body>
 </html>
